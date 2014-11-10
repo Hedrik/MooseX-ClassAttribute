@@ -3,7 +3,8 @@ package MooseX::ClassAttribute::Trait::Application::ToRole;
 use strict;
 use warnings;
 
-use Moose::Util::MetaRole;
+#use Moose::Util::MetaRole;
+use MooseX::ClassAttribute::Util::MetaRole;
 use MooseX::ClassAttribute::Trait::Application::ToClass;
 
 use namespace::autoclean;
@@ -17,7 +18,8 @@ around apply => sub {
     my $role1 = shift;
     my $role2 = shift;
 
-    $role2 = Moose::Util::MetaRole::apply_metaroles(
+#    $role2 = Moose::Util::MetaRole::apply_metaroles(
+    $role2 = MooseX::ClassAttribute::Util::MetaRole::apply_metaroles(
         for            => $role2,
         role_metaroles => {
             role => ['MooseX::ClassAttribute::Trait::Role'],

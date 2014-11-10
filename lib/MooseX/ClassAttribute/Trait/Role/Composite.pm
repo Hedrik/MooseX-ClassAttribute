@@ -3,8 +3,10 @@ package MooseX::ClassAttribute::Trait::Role::Composite;
 use strict;
 use warnings;
 
-use Moose::Util::MetaRole;
-use Moose::Util qw(does_role);
+#use Moose::Util::MetaRole;
+use MooseX::ClassAttribute::Util::MetaRole;
+#use Moose::Util qw(does_role);
+use MooseX::Util qw(does_role);
 
 use namespace::autoclean;
 use Moose::Role;
@@ -55,7 +57,8 @@ around apply_params => sub {
 
     $self->$orig(@_);
 
-    $self = Moose::Util::MetaRole::apply_metaroles(
+#    $self = Moose::Util::MetaRole::apply_metaroles(
+    $self = MooseX::ClassAttribute::Util::MetaRole::apply_metaroles(
         for            => $self,
         role_metaroles => {
             application_to_class =>

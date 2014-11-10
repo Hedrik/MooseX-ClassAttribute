@@ -14,7 +14,8 @@ around apply => sub {
     my $role  = shift;
     my $class = shift;
 
-    $class = Moose::Util::MetaRole::apply_metaroles(
+#    $class = Moose::Util::MetaRole::apply_metaroles(
+    $class = MooseX::ClassAttribute::Util::MetaRole::apply_metaroles(
         for             => $class,
         class_metaroles => {
             class => ['MooseX::ClassAttribute::Trait::Class'],

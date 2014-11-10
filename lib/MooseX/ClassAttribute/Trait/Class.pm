@@ -93,6 +93,7 @@ sub _process_new_class_attribute {
         $p{traits} = ['MooseX::ClassAttribute::Trait::Attribute'];
     }
 
+    ### Possible point to modify for BetterAnonClassNames
     return Moose::Meta::Attribute->interpolate_class_and_new( $name, %p );
 }
 

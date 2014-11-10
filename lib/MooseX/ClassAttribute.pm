@@ -10,7 +10,8 @@ use namespace::autoclean 0.11 ();
 
 use Moose 2.00 ();
 use Moose::Exporter;
-use Moose::Util;
+#use Moose::Util;
+use MooseX::Util;
 use MooseX::ClassAttribute::Trait::Class;
 use MooseX::ClassAttribute::Trait::Role;
 use MooseX::ClassAttribute::Trait::Application::ToClass;
